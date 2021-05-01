@@ -26,6 +26,7 @@ public class CrudServices {
 
     public Course saveCourse(CourseDTO courseDto){
         Course course = new Course();
+        course.setIdCourse(courseDto.getIdCourse());
         course.setNameCourse(courseDto.getNameCourse());
         course.setReviewList(courseDto.getReviewList());
         course.setStudentList(courseDto.getStudentList());
@@ -37,19 +38,20 @@ public class CrudServices {
         return course;
     }
 
-    public Student saveStudent(Student student){
-//        Student student = new Student();
+    public StudentDTO saveStudent(StudentDTO studentDTO){
+        Student student = new Student();
 
-//        student.setNameStudent(studentDTO.getNameStudent());
-//        student.setSurnameStudent(studentDTO.getSurnameStudent());
-//        student.setCourseList(studentDTO.getCourseList());
-//        student.setPassport(studentDTO.getPassport());
+        student.setIdStudent(studentDTO.getIdStudent());
+        student.setNameStudent(studentDTO.getNameStudent());
+        student.setSurnameStudent(studentDTO.getSurnameStudent());
+        student.setCourseList(studentDTO.getCourseList());
+        student.setPassport(studentDTO.getPassport());
 
         repoStudent.save(student);
         repoCourse.saveAll(student.getCourseList());
         repoPassport.save(student.getPassport());
 
-        return student;
+        return studentDTO;
     }
 
 

@@ -2,6 +2,7 @@ package com.example.newproject1.Controller;
 
 import com.example.newproject1.Services.CrudServices;
 import com.example.newproject1.db.dto.CourseDTO;
+import com.example.newproject1.db.dto.StudentDTO;
 import com.example.newproject1.db.entity.Course;
 import com.example.newproject1.db.entity.Student;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +25,8 @@ public class CrudController {
     }
 
     @PostMapping("/studentSave")
-    public ResponseEntity<Student> saveStudent(@RequestBody Student student){
-        return new ResponseEntity<>(services.saveStudent(student),HttpStatus.OK);
+    public ResponseEntity<StudentDTO> saveStudent(@RequestBody StudentDTO dto){
+        return new ResponseEntity<>(services.saveStudent(dto),HttpStatus.OK);
     }
 
     @PostMapping("/saveManyToMany/{id1}/{id2}")

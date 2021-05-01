@@ -21,11 +21,10 @@ import java.util.List;
 public class CourseDTO {
 
     private Long idCourse;
+
     private String nameCourse;
 
-    @JsonManagedReference
     private List<Review> reviewList = new ArrayList<>();
 
-    @JsonBackReference
     private List<Student> studentList = new ArrayList<>();
 }

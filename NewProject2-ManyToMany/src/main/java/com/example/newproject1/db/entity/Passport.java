@@ -11,6 +11,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Data
 @Entity
+
 public class Passport {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

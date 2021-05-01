@@ -21,10 +21,8 @@ public class StudentDTO {
     private String nameStudent;
     private String surnameStudent;
 
-    @JsonManagedReference
-    private Passport passport;
+    private Passport passport = new Passport();
 
-    @JsonManagedReference
     private List<Course> courseList = new ArrayList<>();
 
 }

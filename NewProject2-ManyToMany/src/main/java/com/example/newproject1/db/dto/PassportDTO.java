@@ -19,6 +19,5 @@ public class PassportDTO {
 
     private Long seriyaNo;
 
-    @JsonBackReference
     private Student student;
 }

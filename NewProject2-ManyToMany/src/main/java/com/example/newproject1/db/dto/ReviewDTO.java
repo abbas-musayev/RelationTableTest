@@ -20,6 +20,5 @@ public class ReviewDTO{
     private String rating;
     private String comment;
 
-    @JsonBackReference
-    private Course course;
+    private Course course = new Course();
 }
